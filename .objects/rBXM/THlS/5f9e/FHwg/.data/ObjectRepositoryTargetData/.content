@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="AXn6ZBVB-0uThy6kM5MFbw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="binance.bh/en/markets/overview" DesignTimeRectangle="365, 643, 312, 48" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='refresh-token-shadow-host' tag='DIV' /&gt;&lt;webctrl shadowhostid='refresh-token-shadow-host' tag='BUTTON' aaname='Log In' innertext='Log In' visibleinnertext='Log In' /&gt;" Guid="6f374890-cca9-4380-b921-739b6ba05edf" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="6e90ac7faefb22b090e0b7142fd3d238.png" xmlns="">0uCYMbUkTXU-U_TpFfgEOmQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "wds-ic-send-filled",
+  "Type": "Element",
+  "Id": "0Rf12jk7906UA_9Nsu6N4Q",
+  "Reference": "wcxgfMRV1ki7Gva2glI0QQ/0Rf12jk7906UA_9Nsu6N4Q",
+  "ParentRef": "wcxgfMRV1ki7Gva2glI0QQ/erWCrZ__oECyX4yw4K5X1g",
+  "Created": "2026-04-25T20:15:11.2787766Z",
+  "Updated": "2026-04-25T20:15:11.2787766Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

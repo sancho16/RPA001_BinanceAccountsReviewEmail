@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Y4WoQ8t84E-J5qVvCCpM3A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="web.whatsapp.com" DesignTimeRectangle="160, 333, 159, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='pane-side' tag='SPAN' isleaf='0' title='WhatsApp' /&gt;" Guid="6084de93-afb3-45da-a6ae-a7c0c42f898b" ScopeSelectorArgument="&lt;html app='chrome.exe' title='WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="32e6b2bda5ee86d995f33b410bafc6f4.png" xmlns="">0osuAa0oN00yh2OVMQ1dN9w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

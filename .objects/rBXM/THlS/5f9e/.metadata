@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Overview - Wallet - Binance(1)",
+  "Type": "Screen",
+  "Id": "5f9eLRXcE02MNbQc6BQorQ",
+  "Reference": "wcxgfMRV1ki7Gva2glI0QQ/5f9eLRXcE02MNbQc6BQorQ",
+  "ParentRef": "wcxgfMRV1ki7Gva2glI0QQ/THlS4NoCJ0q32AmiHsJh6Q",
+  "Created": "2026-04-05T17:55:01.2575227Z",
+  "Updated": "2026-04-05T17:55:01.2575227Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

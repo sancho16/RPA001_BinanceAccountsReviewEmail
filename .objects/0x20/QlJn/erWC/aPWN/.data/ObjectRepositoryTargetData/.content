@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="xHXK_6NXXk2dpwnJltekwQ" Reference="wcxgfMRV1ki7Gva2glI0QQ/aPWNvnHodk2Gy5W9P3aeRA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="web.whatsapp.com" DesignTimeRectangle="612, 983, 421, 22" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='P' /&gt;" Guid="31f6f6a5-8ac7-4112-bce5-a0f961346571" ScopeSelectorArgument="&lt;html app='chrome.exe' title='WhatsApp' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="534, 982, 24, 24" FuzzySelectorArgument="&lt;webctrl parentid='main' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='SPAN' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' aria-hidden='true' data-icon='plus-rounded' data-testid='plus-rounded' innertext='plus-rounded' check:text='plus-rounded' /&gt;" Guid="a5237274-6f27-4e22-b118-dadd9face4ab" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="fd3ee1380521143e2ea87133377de96f.png" xmlns="">0ShwTKNteHka6q62i4N564g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

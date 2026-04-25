@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Continue as Julián, jul…",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "P6XfjxitbEqcNst-1cTSeg",
+  "Reference": "wcxgfMRV1ki7Gva2glI0QQ/P6XfjxitbEqcNst-1cTSeg",
+  "ParentRef": "wcxgfMRV1ki7Gva2glI0QQ/5f9eLRXcE02MNbQc6BQorQ",
+  "Created": "2026-04-15T00:02:54.9592422Z",
+  "Updated": "2026-04-15T00:02:54.9592422Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

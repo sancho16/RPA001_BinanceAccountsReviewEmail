@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="MhB2tEAVM0CAxO8CbEVyGw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="binance.bh/en/markets/overview" CVScreenId="a58911df-1696-44ea-b79e-090f2db6e234" CvElementArea="25, 184, 535, 61" CvTextArea="208, 204, 168, 21" CvTextArgument="Continue as Julián" CvType="Button" DesignTimeRectangle="29, 187, 529, 57" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Sign in to binance.bh with google.com' role='dialog' /&gt;&lt;ctrl name='Continue as*' role='push button' /&gt;" Guid="09ef1d39-c996-4998-90ed-c2fe632b2d28" ScopeSelectorArgument="&lt;wnd aaname='Sign in to binance.bh with google.com' app='chrome.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="b2bb023a9a571d16967bd565bd75cc52.png" xmlns="">09INAwwIhz0qzsNcNxZzRsw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

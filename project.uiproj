@@ -1,0 +1,6 @@
+{
+  "Name": "RPA001_BinanceAccountsReviewEmail",
+  "ProjectType": "Process",
+  "Description": "This automation will read the crypto market",
+  "MainFile": "Main.xaml"
+}

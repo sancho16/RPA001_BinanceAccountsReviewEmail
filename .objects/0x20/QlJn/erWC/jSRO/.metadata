@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Julian Sánchez Davila",
+  "Type": "Element",
+  "Id": "jSROr7Z0nkqB_ri28Hy8kQ",
+  "Reference": "wcxgfMRV1ki7Gva2glI0QQ/jSROr7Z0nkqB_ri28Hy8kQ",
+  "ParentRef": "wcxgfMRV1ki7Gva2glI0QQ/erWCrZ__oECyX4yw4K5X1g",
+  "Created": "2026-04-25T17:43:23.5330808Z",
+  "Updated": "2026-04-25T17:43:23.5330808Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
