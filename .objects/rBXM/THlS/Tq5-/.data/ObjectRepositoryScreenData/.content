@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="KQxFMvjcv0G8F77s9eC_Ng" Reference="wcxgfMRV1ki7Gva2glI0QQ/Tq5-73DWFkGAdvQ91TgaQg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-8, -8, 1936, 1056" BrowserType="Chrome" ContentHash="AUPd0VBsfkGPOfzSUcG0dA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF1SURBVFhHxZVRSgQxEETn09PMtyziSfYk4o/smUTwVrIH0OpYBZNMT5LZSTIFBabT6VfsJDgd0f17/oBvXI4V4b/02BAJfGwIgDy43DcEADm43CcEBtfA5bYhMHAPXG4TAoNy8C/a2zMfC4EBJfgT3T4EDr4lg5YOcLZabynEO1vrhUPP8M9iiBzBJatxL+23GRe27RMOpiFcuGR77HkMjuYrHAGwVogVHOsL/MplkPWwdwXn3pXLWNjQhfNAs1MzuEHu8AvLQdYLz1wGsfYJGyO+mCikt730Uwuu/lWIpbC3hMv/IfDH1lNzQ6CWwmULEX0OE2oeXL6dH4BN530CCYXzLqGEjUeeoffUrNfO1D9DTzaAg/SzlT6N4OpfhaiWHeQADZPdEFbjXtqfvR+bwqFz/xmZcHDriZpDCDoH9y9crTCgFKIfXMKgXIgtt4FLGLgnRFu4hME1IfrAJQByIfrCJYC8EGPgEoDLEGPhEkMcgE/THwEIO6mK/sBKAAAAAElFTkSuQmCC" Reference="wcxgfMRV1ki7Gva2glI0QQ/Tq5-73DWFkGAdvQ91TgaQg" Selector="&lt;html app='chrome.exe' title='*inance' /&gt;" Url="[in_URL]" Version="V2">
+      <imageRef attrName="InformativeScreenshot" originalValue="665b3006b891478d5729d24c210a1cee.jpg" xmlns="">02yqve7KdBk2m0dbKOomBTg</imageRef>
+    </TargetApp>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData IsVariable="False" Name="in_URL" />
+    </scg:List>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

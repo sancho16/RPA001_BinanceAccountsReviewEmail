@@ -1,0 +1,17 @@
+Name,Full Name,Price,Price Small,Change,24Volume,New column 7,Url
+BTC,Bitcoin,"$78,084.01","78,084.01",+0.67%,$16.48B,$1.56T,https://www.binance.bh/en/price/bitcoin
+ETH,Ethereum,"$2,332.71","2,332.71",+0.63%,$7.33B,$281.51B,https://www.binance.bh/en/price/ethereum
+USDT,TetherUS,$1.00,1.00,+0.00%,$91.31B,$189.81B,https://www.binance.bh/en/price/tether
+XRP,XRP,$1.43,1.43,-0.34%,$1.13B,$88.14B,https://www.binance.bh/en/price/xrp
+BNB,BNB,$631.21,631.21,-0.97%,$798.72M,$85.21B,https://www.binance.bh/en/price/bnb
+USDC,USDC,$0.99966,0.99966,+0.00%,$52.30B,$77.67B,https://www.binance.bh/en/price/usd-coin
+SOL,Solana,$86.57,86.57,+0.13%,$2.64B,$49.88B,https://www.binance.bh/en/price/solana
+TRX,TRON,$0.3236,0.3236,+0.00%,$572.09M,$30.70B,https://www.binance.bh/en/price/tron
+,,+0.09%,0.09847
+$0.09847,,,,
+,,+0.00%,0.9996
+$0.9996,,,,
+,,+0.69%,"77,880.89
+$77,880.89",,,,
+,,-0.32%,0.2508
+$0.2508,,,,

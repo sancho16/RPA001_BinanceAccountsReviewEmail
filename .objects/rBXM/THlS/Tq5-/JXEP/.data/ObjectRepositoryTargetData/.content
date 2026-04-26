@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="PZWEzWMXVkuuYb0CDhp3cg" Reference="wcxgfMRV1ki7Gva2glI0QQ/JXEP8uVMPUSzW5rOik-IRg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="binance.bh/en/price/bitcoin" DesignTimeRectangle="1048, 867, 1752, 72" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='DIV' isleaf='1' parentid='__APP' class='t-body2 text-SecondaryText' /&gt;" Guid="560e74f7-5dd3-4aa0-b8b0-acd7d9a3c34b" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Bitcoin Price Today | BTC to USD Live Price, Market Cap &amp;amp; Chart' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="26ed21a67b60fe152479b3cbe447d69e.jpg" xmlns="">0Y8KGMWQRHkiH_rjXdLi2kw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
