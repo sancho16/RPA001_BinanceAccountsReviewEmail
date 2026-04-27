@@ -50,6 +50,8 @@
       <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -111,79 +113,141 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="StartBinance" sap:VirtualizedContainerService.HintSize="1109,1802.9999999999998" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="StartBinance" sap:VirtualizedContainerService.HintSize="1109,1468" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome Overview - Wallet - Binance" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,1780" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Version="V2" WebDriverMode="[UiPath.UIAutomationNext.Enums.NWebDriverMode.Disabled]">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome Overview - Wallet - Binance" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,1445" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Version="V2" WebDriverMode="[UiPath.UIAutomationNext.Enums.NWebDriverMode.Disabled]">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1586" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1251" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Logged Out'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,680" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Timeout="[in_intTimeOut]" Version="V5">
+            <uix:NCheckState DisplayName="Check App State 'Log In(1)'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1191" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Version="V5">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,633" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log In'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log In(2)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Version="V5">
                     <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="binance.bh/en/markets/overview" ContentHash="AXn6ZBVB-0uThy6kM5MFbw" DesignTimeRectangle="365, 643, 312, 48" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='refresh-token-shadow-host' tag='DIV' /&gt;&lt;webctrl shadowhostid='refresh-token-shadow-host' tag='BUTTON' aaname='Log In' innertext='Log In' visibleinnertext='Log In' /&gt;" Guid="6f374890-cca9-4380-b921-739b6ba05edf" InformativeScreenshot="6e90ac7faefb22b090e0b7142fd3d238.png" Reference="wcxgfMRV1ki7Gva2glI0QQ/FHwgNpddO0K405xwgxbvmQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                      <uix:TargetAnchorable BrowserURL="binance.bh/en/markets/overview" ContentHash="pZ5b6-JW6Em9M6ea8fOk7A" DesignTimeRectangle="963, 103, 59, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" Guid="03241ecb-40d5-4e6d-bf6e-e0269afeb7b8" InformativeScreenshot="348c1a60a42a534cf7d3a311c6616984.jpg" Reference="wcxgfMRV1ki7Gva2glI0QQ/JTVM6_NoBEe117GGGIQrUg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue with Google'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="accounts.binance.bh/en/login" ContentHash="kCNscAtOH0u7HtWqawgTVg" DesignTimeRectangle="493, 551, 154, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Continue with Google' parentid='googleLoginBtn' tag='DIV' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Continue with Google' /&gt;" Guid="fee4ecb5-a31d-46af-b441-5c36fc57d5ec" InformativeScreenshot="635b971925807f1ed90a10b06074b76e.jpg" Reference="wcxgfMRV1ki7Gva2glI0QQ/EzWKbdUiRUu_qf4wxd_3Ow" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log In | Binance' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="398, 539, 343, 48" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='button' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' tag='BUTTON' type='' class='bn-button bn-button__icon bn-button__icon__line data-size-large bids_icon-button ' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='Continue with Google' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' visibleinnertext='Continue with Google' check:innerText='Continue with Google' /&gt;" Guid="82825b15-6c63-4905-abf2-e8325c08c02a" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'email'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="accounts.binance.bh/en/login" ContentHash="alqPr8qQo0mbo1Lw-anSpA" DesignTimeRectangle="72, 369, 502, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='julidb710@gmail.com' tag='DIV' /&gt;" Guid="52ebc768-217e-470e-8f01-278f97e6467f" InformativeScreenshot="f27b21f3152a58a329b765d8c5629a3d.jpg" Reference="wcxgfMRV1ki7Gva2glI0QQ/Gu0zuIy1g0W5Hc6S7qtxRw" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='g_credential_picker_25b390053989d9e7' title='Sign in - Google Accounts' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,222" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState DisplayName="Check App State 'Logged Out'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Timeout="[in_intTimeOut]" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log In'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="binance.bh/en/markets/overview" ContentHash="AXn6ZBVB-0uThy6kM5MFbw" DesignTimeRectangle="365, 643, 312, 48" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='refresh-token-shadow-host' tag='DIV' /&gt;&lt;webctrl shadowhostid='refresh-token-shadow-host' tag='BUTTON' aaname='Log In' innertext='Log In' visibleinnertext='Log In' /&gt;" Guid="6f374890-cca9-4380-b921-739b6ba05edf" InformativeScreenshot="6e90ac7faefb22b090e0b7142fd3d238.png" Reference="wcxgfMRV1ki7Gva2glI0QQ/FHwgNpddO0K405xwgxbvmQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="binance.bh/en/markets/overview" ContentHash="j07lkFzigkq0ywcFUd0c9w" DesignTimeRectangle="341, 539, 360, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='refresh-token-shadow-host' tag='DIV' /&gt;&lt;webctrl shadowhostid='refresh-token-shadow-host' tag='DIV' aaname='Logged Out' innertext='Logged Out' isleaf='1' visibleinnertext='Logged Out' /&gt;" Guid="aad0532c-5f30-492a-8b84-851a95936d35" InformativeScreenshot="ed17f44eb6fb6e02dcaff087c0dce586.png" Reference="wcxgfMRV1ki7Gva2glI0QQ/Chw8C0p0XUqqZmKbxxcdIw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Continue as Julián, jul…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="binance.bh/en/markets/overview" CVScreenId="a58911df-1696-44ea-b79e-090f2db6e234" ContentHash="MhB2tEAVM0CAxO8CbEVyGw" CvElementArea="25, 184, 535, 61" CvTextArea="208, 204, 168, 21" CvTextArgument="Continue as Julián" CvType="Button" DesignTimeRectangle="29, 187, 529, 57" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Sign in to binance.bh with google.com' role='dialog' /&gt;&lt;ctrl name='Continue as*' role='push button' /&gt;" Guid="09ef1d39-c996-4998-90ed-c2fe632b2d28" InformativeScreenshot="b2bb023a9a571d16967bd565bd75cc52.png" Reference="wcxgfMRV1ki7Gva2glI0QQ/P6XfjxitbEqcNst-1cTSeg" ScopeSelectorArgument="&lt;wnd aaname='Sign in to binance.bh with google.com' app='chrome.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State 'Deposit'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Timeout="[in_intTimeOut]" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Logged in&quot;]" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="binance.bh/en/markets/overview" ContentHash="I1jl6lEE0kCcZL0MANZj0A" DesignTimeRectangle="937, 103, 88, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' innertext='Deposit' visibleinnertext='Deposit' /&gt;" Guid="5b37a041-a3cb-484e-9d67-716be05e5aad" InformativeScreenshot="54cb6bc8929cb00c9b43eb828deb6b55.png" Reference="wcxgfMRV1ki7Gva2glI0QQ/gmCHzDIZP0WqUOyAGsOIMA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
                 </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>
-                <uix:TargetAnchorable BrowserURL="binance.bh/en/markets/overview" ContentHash="j07lkFzigkq0ywcFUd0c9w" DesignTimeRectangle="341, 539, 360, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='refresh-token-shadow-host' tag='DIV' /&gt;&lt;webctrl shadowhostid='refresh-token-shadow-host' tag='DIV' aaname='Logged Out' innertext='Logged Out' isleaf='1' visibleinnertext='Logged Out' /&gt;" Guid="aad0532c-5f30-492a-8b84-851a95936d35" InformativeScreenshot="ed17f44eb6fb6e02dcaff087c0dce586.png" Reference="wcxgfMRV1ki7Gva2glI0QQ/Chw8C0p0XUqqZmKbxxcdIw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
-              </uix:NCheckState.Target>
-            </uix:NCheckState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Continue as Julián, jul…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="binance.bh/en/markets/overview" CVScreenId="a58911df-1696-44ea-b79e-090f2db6e234" ContentHash="MhB2tEAVM0CAxO8CbEVyGw" CvElementArea="25, 184, 535, 61" CvTextArea="208, 204, 168, 21" CvTextArgument="Continue as Julián" CvType="Button" DesignTimeRectangle="29, 187, 529, 57" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Sign in to binance.bh with google.com' role='dialog' /&gt;&lt;ctrl name='Continue as*' role='push button' /&gt;" Guid="09ef1d39-c996-4998-90ed-c2fe632b2d28" InformativeScreenshot="b2bb023a9a571d16967bd565bd75cc52.png" Reference="wcxgfMRV1ki7Gva2glI0QQ/P6XfjxitbEqcNst-1cTSeg" ScopeSelectorArgument="&lt;wnd aaname='Sign in to binance.bh with google.com' app='chrome.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State 'Deposit'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,652" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="05bf4b1a-75ad-4b61-9ba7-4a2043024d9e" Timeout="[in_intTimeOut]" Version="V5">
-              <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Logged in&quot;]" />
-                </Sequence>
-              </uix:NCheckState.IfExists>
-              <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </uix:NCheckState.IfNotExists>
-              <uix:NCheckState.Target>
-                <uix:TargetAnchorable BrowserURL="binance.bh/en/markets/overview" ContentHash="I1jl6lEE0kCcZL0MANZj0A" DesignTimeRectangle="937, 103, 88, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' innertext='Deposit' visibleinnertext='Deposit' /&gt;" Guid="5b37a041-a3cb-484e-9d67-716be05e5aad" InformativeScreenshot="54cb6bc8929cb00c9b43eb828deb6b55.png" Reference="wcxgfMRV1ki7Gva2glI0QQ/gmCHzDIZP0WqUOyAGsOIMA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                <uix:TargetAnchorable BrowserURL="binance.bh/en/markets/overview" ContentHash="Imafw4ZGykOYrNd0ETFleA" DesignTimeRectangle="963, 103, 59, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" Guid="ed8f582d-75a8-4178-9c8d-0dad1b62645a" InformativeScreenshot="479dbbda93a2c440d25e3c5cf0b0c590.jpg" Reference="wcxgfMRV1ki7Gva2glI0QQ/IbyWiNWeXka6R23FRY3DNQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NCheckState.Target>
             </uix:NCheckState>
           </Sequence>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="kCNscAtOH0u7HtWqawgTVg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="accounts.binance.bh/en/login" DesignTimeRectangle="493, 551, 154, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Continue with Google' parentid='googleLoginBtn' tag='DIV' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Continue with Google' /&gt;" Guid="fee4ecb5-a31d-46af-b441-5c36fc57d5ec" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log In | Binance' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="398, 539, 343, 48" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='button' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' tag='BUTTON' type='' class='bn-button bn-button__icon bn-button__icon__line data-size-large bids_icon-button ' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='Continue with Google' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' visibleinnertext='Continue with Google' check:innerText='Continue with Google' /&gt;" Guid="82825b15-6c63-4905-abf2-e8325c08c02a" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="635b971925807f1ed90a10b06074b76e.jpg" xmlns="">0eSHFH4GOXE--iUcQQJdXWg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

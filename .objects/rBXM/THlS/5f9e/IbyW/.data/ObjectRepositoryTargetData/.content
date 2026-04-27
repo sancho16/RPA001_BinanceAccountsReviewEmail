@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Imafw4ZGykOYrNd0ETFleA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="binance.bh/en/markets/overview" DesignTimeRectangle="963, 103, 59, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" Guid="ed8f582d-75a8-4178-9c8d-0dad1b62645a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="479dbbda93a2c440d25e3c5cf0b0c590.jpg" xmlns="">08UDTX_pjXUKGS8cgQYyQhQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

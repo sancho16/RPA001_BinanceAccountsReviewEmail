@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Continue with Google",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "EzWKbdUiRUu_qf4wxd_3Ow",
+  "Reference": "wcxgfMRV1ki7Gva2glI0QQ/EzWKbdUiRUu_qf4wxd_3Ow",
+  "ParentRef": "wcxgfMRV1ki7Gva2glI0QQ/5f9eLRXcE02MNbQc6BQorQ",
+  "Created": "2026-04-27T00:44:32.9731761Z",
+  "Updated": "2026-04-27T00:44:32.9731761Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.30.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
