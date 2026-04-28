@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="KVtVuJW01EyBgrTXavW0Kg" Reference="wcxgfMRV1ki7Gva2glI0QQ/lCAQHiek6Uqtkz4q7bOdXw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="binance.bh/en/price/bitcoin" DesignTimeRectangle="431, 529, 711, 334" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl idx='2' tableCol='2' tableRow='1' tag='CANVAS' isleaf='1' parentid='chart' /&gt;" Guid="78b52a1a-80a7-4c51-a76c-6380b2995b3d" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Bitcoin Price Today | BTC to USD Live Price, Market Cap &amp;amp; Chart' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="da73d8eec484866963b614f7c2e08ef3.jpg" xmlns="">0Lzx_j6BOIkiz2laZFW2vHw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

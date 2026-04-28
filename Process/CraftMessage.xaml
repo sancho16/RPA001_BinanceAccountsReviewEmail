@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CraftMessage" this:CraftMessage.in_strMessage="Test 123" this:CraftMessage.in_strCurrency="Test 456" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CraftMessage" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strMessage" Type="InArgument(x:String)" />
     <x:Property Name="in_strCurrency" Type="InArgument(x:String)" />
@@ -45,6 +45,9 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -102,42 +105,121 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CraftMessage" sap:VirtualizedContainerService.HintSize="1109,708" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CraftMessage" sap:VirtualizedContainerService.HintSize="2125.333333333333,2624" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome WhatsApp" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,685" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome WhatsApp" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2209.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,491" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2005.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strImagePath" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'P'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="WindowMessages" ScopeIdentifier="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Text="[&quot;The result for &quot;+in_strCurrency+ &quot; is &quot;+in_strMessage]" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'plus-rounded'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="web.whatsapp.com" ContentHash="kSwaE_bsH0uJo8Rv3JCOUg" DesignTimeRectangle="1242, 2037, 36, 36" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;footer&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;button&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' parentid='main' tag='SPAN' data-icon='plus-rounded' data-testid='plus-rounded' innertext='plus-rounded' /&gt;" Guid="70c0e861-4bb4-4466-a0d0-76417eca9a0d" Reference="wcxgfMRV1ki7Gva2glI0QQ/oN66xxDKGECr_WQF7ECNfQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Photos &amp; videos'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="web.whatsapp.com" ContentHash="BQYVTg4_f0yZJCrzv1t1Vg" DesignTimeRectangle="1203, 1646, 154, 30" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Photos &amp;amp; videos' parentid='app' tag='SPAN' innertext='Photos &amp;amp; videos' /&gt;" Guid="3be76368-12fd-465d-bdb3-19b574eb5a01" Reference="wcxgfMRV1ki7Gva2glI0QQ/nFVJ9UDT9EenQ5DmIP0vqQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strImagePath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.CurrentDirectory,"screenshot.png")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'File &amp;name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,248" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="WindowMessages" ScopeIdentifier="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Text="[strImagePath]" Version="V5">
               <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="web.whatsapp.com" ContentHash="xHXK_6NXXk2dpwnJltekwQ" DesignTimeRectangle="612, 983, 421, 22" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='P' /&gt;" Guid="31f6f6a5-8ac7-4112-bce5-a0f961346571" InformativeScreenshot="fd3ee1380521143e2ea87133377de96f.png" Reference="wcxgfMRV1ki7Gva2glI0QQ/aPWNvnHodk2Gy5W9P3aeRA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='WhatsApp' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="None">
+                <uix:TargetAnchorable BrowserURL="web.whatsapp.com" CVScreenId="150cc51f-18bb-42e2-ba45-a1f21a35d604" ContentHash="T9Xf1wRWe0-cQFAyIXjyYQ" CvElementArea="279, 697, 825, 36" CvType="InputBox" DesignTimeRectangle="287, 705, 787, 25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;wnd aaname='File name:' aastate='focusable' /&gt;&lt;wnd aaname='File name:' aastate='collapsed, focusable' cls='ComboBox' /&gt;&lt;wnd aaname='File name:' aastate='focusable' /&gt;" Guid="c388eb16-877e-42c9-b120-8aacca421360" IsResponsive="True" Reference="wcxgfMRV1ki7Gva2glI0QQ/Qf6cbBUQFUCabXNksKF6gA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="534, 982, 24, 24" FuzzySelectorArgument="&lt;webctrl parentid='main' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='SPAN' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' aria-hidden='true' data-icon='plus-rounded' data-testid='plus-rounded' innertext='plus-rounded' check:text='plus-rounded' /&gt;" Guid="a5237274-6f27-4e22-b118-dadd9face4ab" SearchSteps="FuzzySelector" />
+                      <uix:Target CVScreenId="150cc51f-18bb-42e2-ba45-a1f21a35d604" CvTextArea="194, 706, 81, 20" CvTextArgument="File name:" CvType="Text" DesignTimeRectangle="196, 704, 79, 25" ElementType="Text" FuzzySelectorArgument="&lt;wnd title='File &amp;amp;name:' matching:title='fuzzy' fuzzylevel:title='0.0' aaname='File name:' cls='Static' check:text='File &amp;amp;name:' /&gt;" Guid="3829e035-564a-4d5f-ad4a-a4597450e20f" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'wds-ic-send-filled'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Open'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Version="V5">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="web.whatsapp.com" ContentHash="MXmrv1J5gEKQGVxT9P2acQ" DesignTimeRectangle="974, 982, 40, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='2' parentid='main' tag='DIV' innertext='wds-ic-send-filled' isleaf='0' class='html-div*' /&gt;" Guid="3d1bbcdd-c150-4245-9135-237d9e6cf5e3" InformativeScreenshot="2229bd6cf7c85ff852f1b4b1caaad4e7.png" Reference="wcxgfMRV1ki7Gva2glI0QQ/0Rf12jk7906UA_9Nsu6N4Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(1) WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                <uix:TargetAnchorable BrowserURL="web.whatsapp.com" CVScreenId="b22b1e01-ca2a-428e-a0c7-c6c07a9a88d0" ContentHash="BSmg1FkSjESi6Fw6wdR-Pw" CvElementArea="1119, 740, 135, 40" CvTextArea="1162, 751, 46, 22" CvTextArgument="Open" CvType="Button" DesignTimeRectangle="1121, 742, 132, 39" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' cls='Button' /&gt;" Guid="65f0620f-cb2b-4f6e-b6fb-a59587b20bf3" Reference="wcxgfMRV1ki7Gva2glI0QQ/SXUcPuqI-0aoTpBWEnIgcQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
               </uix:NClick.Target>
             </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'P'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,248" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="WindowMessages" ScopeIdentifier="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Text="[&quot;IA RESPONSE for &quot;+in_strCurrency.ToUpper+ &quot; = &quot;+in_strMessage]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="web.whatsapp.com" ContentHash="_PvOL28C1Ey3rRxv5-BwGA" DesignTimeRectangle="975, 901, 538, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='P' isleaf='0' parentid='app' /&gt;" Guid="8336e1f7-c46f-4f1c-a9c0-b4b5e7355851" InformativeScreenshot="8ab3a5413bf533a9d0ae5d741f682e24.jpg" Reference="wcxgfMRV1ki7Gva2glI0QQ/aPWNvnHodk2Gy5W9P3aeRA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(1) WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452,686.6666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'wds-ic-send-filled'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,163.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Timeout="2" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="web.whatsapp.com" ContentHash="bwIWwDUs5EKdvZXKekPIdA" DesignTimeRectangle="1867, 984, 30, 30" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='app' tag='SPAN' aria-hidden='true' data-icon='wds-ic-send-filled' isleaf='0' /&gt;" Guid="ffc25835-0514-4c07-925d-507819c17859" InformativeScreenshot="f4720a89511d5218abf78cf6f0416535.jpg" Reference="wcxgfMRV1ki7Gva2glI0QQ/0Rf12jk7906UA_9Nsu6N4Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,246" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DisplayName="Click 'wds-ic-send-filled(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,186" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Version="V5">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="web.whatsapp.com" ContentHash="_vbEKAKmBEez_IOgrK8wMw" DesignTimeRectangle="3529, 2037, 36, 36" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;footer&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;button&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' parentid='main' tag='SPAN' aria-hidden='true' data-icon='wds-ic-send-filled' /&gt;" Guid="4e822c35-3379-46e4-813a-5e109969e4ea" Reference="wcxgfMRV1ki7Gva2glI0QQ/Mqe4cUtmrk2ekk_GV_OwZQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(1) WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+              <TryCatch.Finally>
+                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="450,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </TryCatch.Finally>
+            </TryCatch>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -159,5 +241,18 @@
         </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
+    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="488,114" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="screenshot.png" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kills all Windows processes representing applications used in this business process to assure that the execution starts in a clean state.&#xA;Since the applications are assumed to be already closed, CloseAllApplications is skipped and just KillAllProcess is invoked." DisplayName="Invoke KillAllProcesses workflow (first run)" sap:VirtualizedContainerService.HintSize="488,278" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_arrAppsToKill" />
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

@@ -28,6 +28,18 @@
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": null
+    },
+    {
+      "Name": "in_boolLoadData",
+      "DisplayName": "in_boolLoadData",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "False",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
     }
   ]
 }

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ShowCurrencyDetail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ShowCurrencyDetail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_FullName" Type="InArgument(x:String)" />
     <x:Property Name="in_URL" Type="InArgument(x:String)" />
@@ -49,6 +49,9 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>UiPath.Platform</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -110,19 +113,19 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ShowCurrencyDetail" sap:VirtualizedContainerService.HintSize="1109,2069" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ShowCurrencyDetail" sap:VirtualizedContainerService.HintSize="1107.3333333333333,2737.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName="Chrome inance" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,2046" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="092cae67-3a6c-4f3b-9327-4d031a4a627b" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName="Chrome inance" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2714.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="092cae67-3a6c-4f3b-9327-4d031a4a627b" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1852" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2520" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="image_Screenshot" />
               <Variable x:TypeArguments="upr:ILocalResource" Name="str_ScreenshotPath" />
@@ -132,62 +135,83 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[in_FullName]" />
-            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,277" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" OutFile="[str_ScreenshotPath]" ScopeIdentifier="092cae67-3a6c-4f3b-9327-4d031a4a627b" Version="V5" />
-            <ui:InvokeCode ContinueOnError="{x:Null}" Code="str_Base64Image = Convert.ToBase64String(System.IO.File.ReadAllBytes(str_ScreenshotPath))" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="416,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+            <uix:NCheckState DisplayName="Check App State 'CANVAS'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,525" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="092cae67-3a6c-4f3b-9327-4d031a4a627b" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="binance.bh/en/price/bitcoin" ContentHash="KVtVuJW01EyBgrTXavW0Kg" DesignTimeRectangle="431, 529, 711, 334" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl idx='2' tableCol='2' tableRow='1' tag='CANVAS' isleaf='1' parentid='chart' /&gt;" Guid="78b52a1a-80a7-4c51-a76c-6380b2995b3d" InformativeScreenshot="da73d8eec484866963b614f7c2e08ef3.jpg" Reference="wcxgfMRV1ki7Gva2glI0QQ/lCAQHiek6Uqtkz4q7bOdXw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Bitcoin Price Today | BTC to USD Live Price, Market Cap &amp;amp; Chart' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[in_FullName]" />
+            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,280.6666666666667" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" OutFile="[str_ScreenshotPath]" ScopeIdentifier="092cae67-3a6c-4f3b-9327-4d031a4a627b" Version="V5" />
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code="str_Base64Image = Convert.ToBase64String(System.IO.File.ReadAllBytes(str_ScreenshotPath))" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="452,197.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
               <ui:InvokeCode.Arguments>
                 <OutArgument x:TypeArguments="x:String" x:Key="str_Base64Image">[out_Image]</OutArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="str_ScreenshotPath">[str_ScreenshotPath.FullName]</InArgument>
               </ui:InvokeCode.Arguments>
             </ui:InvokeCode>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[out_Image]" />
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,261.3333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="092cae67-3a6c-4f3b-9327-4d031a4a627b" Shortcuts="[d(hk)][k(PgDn)][u(hk)]" Version="V5" />
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452,619.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <uix:NGetText DisplayName="Get Text 'The live price of Bitco…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,111.33333333333333" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="092cae67-3a6c-4f3b-9327-4d031a4a627b" TextString="[out_strTodaySummary]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="binance.bh/en/price/bitcoin" ContentHash="PZWEzWMXVkuuYb0CDhp3cg" DesignTimeRectangle="1048, 867, 1752, 72" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='DIV' isleaf='1' parentid='__APP' class='t-body2 text-SecondaryText' /&gt;" Guid="560e74f7-5dd3-4aa0-b8b0-acd7d9a3c34b" InformativeScreenshot="26ed21a67b60fe152479b3cbe447d69e.jpg" Reference="wcxgfMRV1ki7Gva2glI0QQ/JXEP8uVMPUSzW5rOik-IRg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Bitcoin Price Today | BTC to USD Live Price, Market Cap &amp;amp; Chart' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                </uix:NGetText>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,167.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[out_strTodaySummary]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">["No summary"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+              <TryCatch.Finally>
+                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="450,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[out_Image]" />
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,257" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="092cae67-3a6c-4f3b-9327-4d031a4a627b" Shortcuts="[d(hk)][k(PgDn)][u(hk)]" Version="V5" />
-            <uix:NGetText DisplayName="Get Text 'The live price of Bitco…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,143" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="092cae67-3a6c-4f3b-9327-4d031a4a627b" TextString="[out_strTodaySummary]" Version="V5">
-              <uix:NGetText.Target>
-                <uix:TargetAnchorable BrowserURL="binance.bh/en/price/bitcoin" ContentHash="PZWEzWMXVkuuYb0CDhp3cg" DesignTimeRectangle="1048, 867, 1752, 72" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='DIV' isleaf='1' parentid='__APP' class='t-body2 text-SecondaryText' /&gt;" Guid="560e74f7-5dd3-4aa0-b8b0-acd7d9a3c34b" InformativeScreenshot="26ed21a67b60fe152479b3cbe447d69e.jpg" Reference="wcxgfMRV1ki7Gva2glI0QQ/JXEP8uVMPUSzW5rOik-IRg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Bitcoin Price Today | BTC to USD Live Price, Market Cap &amp;amp; Chart' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-              </uix:NGetText.Target>
-            </uix:NGetText>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[out_strTodaySummary]" />
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,118" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Check image&quot;]" />
-            <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="screenshot.png" />
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="450,576" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage Message="{x:Null}" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" />
-                  <ui:LogMessage Message="{x:Null}" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" />
-                  <ui:LogMessage Message="{x:Null}" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" />
-                </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
+              </TryCatch.Finally>
+            </TryCatch>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[out_strTodaySummary]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

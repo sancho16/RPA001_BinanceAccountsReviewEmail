@@ -13,6 +13,9 @@
           },
           "in_OrchestratorQueueFolder": {
             "type": "string"
+          },
+          "in_boolLoadData": {
+            "type": "boolean"
           }
         },
         "required": []

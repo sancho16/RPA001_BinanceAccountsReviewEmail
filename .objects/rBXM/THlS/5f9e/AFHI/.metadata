@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Stay Logged In",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "AFHILexY3EC00XZHXbHy4A",
+  "Reference": "wcxgfMRV1ki7Gva2glI0QQ/AFHILexY3EC00XZHXbHy4A",
+  "ParentRef": "wcxgfMRV1ki7Gva2glI0QQ/5f9eLRXcE02MNbQc6BQorQ",
+  "Created": "2026-04-27T03:06:46.5871604Z",
+  "Updated": "2026-04-27T03:06:46.5871604Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.30.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

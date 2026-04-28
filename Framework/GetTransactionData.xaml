@@ -1,5 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetTransactionData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetTransactionData" this:GetTransactionData.in_boolLoadData="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="in_boolLoadData" Type="InArgument(x:Boolean)" />
     <x:Property sap2010:Annotation.AnnotationText="Sequential counter of transaction items." Name="in_TransactionNumber" Type="InArgument(x:Int32)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="out_TransactionItem" Type="OutArgument(ui:QueueItem)" />
@@ -114,7 +115,7 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;If there are no transaction items remaining, out_TransactionItem is set to Nothing, which leads to the End Process state. &#xA;&#xA;For cases in which there is only a single transaction (i.e., a linear process), use an If activity to check whether the argument in_TransactionNumber has the value 1 (meaning it is the first and only transaction) and assign the transaction item to out_TransactionItem. For any other value of in_TransactionNumber, out_TransactionItem should be set to Nothing.&#xA;&#xA;If there are multiple transactions, use the argument in_TransactionNumber as an index to retrieve the correct transaction to be processed. If there are no more transactions left, it is necessary to set out_TransactionItem to Nothing, thus ending the process." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="1109,3265" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;If there are no transaction items remaining, out_TransactionItem is set to Nothing, which leads to the End Process state. &#xA;&#xA;For cases in which there is only a single transaction (i.e., a linear process), use an If activity to check whether the argument in_TransactionNumber has the value 1 (meaning it is the first and only transaction) and assign the transaction item to out_TransactionItem. For any other value of in_TransactionNumber, out_TransactionItem should be set to Nothing.&#xA;&#xA;If there are multiple transactions, use the argument in_TransactionNumber as an index to retrieve the correct transaction to be processed. If there are no more transactions left, it is necessary to set out_TransactionItem to Nothing, thus ending the process." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="1109,3268" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -122,9 +123,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Get Transaction Item" sap:VirtualizedContainerService.HintSize="495,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Get the transaction item&quot;]" />
-    <If Condition="[in_TransactionNumber=1]" sap:VirtualizedContainerService.HintSize="495,1210" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[in_TransactionNumber=1 AndAlso in_boolLoadData=True]" sap:VirtualizedContainerService.HintSize="495,1213" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,981" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,983" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_ExtractDataTable" />
             <Variable x:TypeArguments="x:String" Name="strDtExtract" />
@@ -132,6 +133,7 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="BinanceDataExtract - Invoke Workflow File (BinanceDataExtract.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Get Transaction Data\BinanceDataExtract.xaml">
@@ -151,10 +153,11 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <ui:OutputDataTable DataTable="[dt_ExtractDataTable]" DisplayName="Output Data Table as Text" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strDtExtract]" />
-          <ui:WriteTextFile FileName="{x:Null}" Output="{x:Null}" DisplayName="Write Text File" File="[LocalResource.FromPath(&quot;Data\\DataQueue.txt&quot;)]" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strDtExtract]" />
+          <ui:OutputDataTable DataTable="[dt_ExtractDataTable]" DisplayName="Output Data Table as Text" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strDtExtract]" />
+          <ui:WriteTextFile FileName="{x:Null}" Output="{x:Null}" DisplayName="Write Text File" File="[LocalResource.FromPath(&quot;Data\\DataQueue.txt&quot;)]" sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strDtExtract]" />
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LoadQueueItems - Invoke Workflow File (LoadQueueItems.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Get Transaction Data\LoadQueueItems.xaml">
             <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Reference" />
               <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_ExtractDataTable">[dt_ExtractDataTable]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_strOrchestratorFolder" />
               <InArgument x:TypeArguments="x:String" x:Key="in_strQueueName" />
@@ -163,7 +166,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -172,10 +175,10 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Get transaction item" sap:VirtualizedContainerService.HintSize="495,1043" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Cint(in_Config(&quot;RetryNumberGetTransactionItem&quot;))]">
+    <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Get transaction item" sap:VirtualizedContainerService.HintSize="494.6666666666667,1042.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Cint(in_Config(&quot;RetryNumberGetTransactionItem&quot;))]">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <TryCatch DisplayName="Try Catch Get transaction item" sap:VirtualizedContainerService.HintSize="452,766" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+          <TryCatch DisplayName="Try Catch Get transaction item" sap:VirtualizedContainerService.HintSize="452,765.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -183,13 +186,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="450,251" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="450,250.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:GetQueueItem ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Get a transaction item from the specified Orchestrator queue.&#xA;If queues are not used in this process, replace this activity with the appropriated logic to retrieve transaction items.&#xA;For example, if transactions are rows from a DataTable, the row corresponding to the current transaction is retrieved at this point." DisplayName="Get transaction item" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="416,191" sap2010:WorkflowViewState.IdRef="GetQueueItem_2" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" TransactionItem="[out_TransactionItem]">
+                <ui:GetQueueItem ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Get a transaction item from the specified Orchestrator queue.&#xA;If queues are not used in this process, replace this activity with the appropriated logic to retrieve transaction items.&#xA;For example, if transactions are rows from a DataTable, the row corresponding to the current transaction is retrieved at this point." DisplayName="Get transaction item" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="416,190.66666666666666" sap2010:WorkflowViewState.IdRef="GetQueueItem_2" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" TransactionItem="[out_TransactionItem]">
                   <ui:GetQueueItem.Reference>
                     <InArgument x:TypeArguments="x:String" />
                   </ui:GetQueueItem.Reference>

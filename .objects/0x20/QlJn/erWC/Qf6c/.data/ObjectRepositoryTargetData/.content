@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="T9Xf1wRWe0-cQFAyIXjyYQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="web.whatsapp.com" CVScreenId="150cc51f-18bb-42e2-ba45-a1f21a35d604" CvElementArea="279, 697, 825, 36" CvType="InputBox" DesignTimeRectangle="287, 705, 787, 25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;wnd aaname='File name:' aastate='focusable' /&gt;&lt;wnd aaname='File name:' aastate='collapsed, focusable' cls='ComboBox' /&gt;&lt;wnd aaname='File name:' aastate='focusable' /&gt;" Guid="c388eb16-877e-42c9-b120-8aacca421360" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="150cc51f-18bb-42e2-ba45-a1f21a35d604" CvTextArea="194, 706, 81, 20" CvTextArgument="File name:" CvType="Text" DesignTimeRectangle="196, 704, 79, 25" ElementType="Text" FuzzySelectorArgument="&lt;wnd title='File &amp;amp;name:' matching:title='fuzzy' fuzzylevel:title='0.0' aaname='File name:' cls='Static' check:text='File &amp;amp;name:' /&gt;" Guid="3829e035-564a-4d5f-ad4a-a4597450e20f" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

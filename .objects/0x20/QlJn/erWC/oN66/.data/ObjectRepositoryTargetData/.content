@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="kSwaE_bsH0uJo8Rv3JCOUg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="web.whatsapp.com" DesignTimeRectangle="1242, 2037, 36, 36" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;footer&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;button&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' parentid='main' tag='SPAN' data-icon='plus-rounded' data-testid='plus-rounded' innertext='plus-rounded' /&gt;" Guid="70c0e861-4bb4-4466-a0d0-76417eca9a0d" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

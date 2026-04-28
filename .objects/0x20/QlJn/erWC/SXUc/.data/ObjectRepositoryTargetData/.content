@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="BSmg1FkSjESi6Fw6wdR-Pw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="web.whatsapp.com" CVScreenId="b22b1e01-ca2a-428e-a0c7-c6c07a9a88d0" CvElementArea="1119, 740, 135, 40" CvTextArea="1162, 751, 46, 22" CvTextArgument="Open" CvType="Button" DesignTimeRectangle="1121, 742, 132, 39" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' cls='Button' /&gt;" Guid="65f0620f-cb2b-4f6e-b6fb-a59587b20bf3" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="PICTO5Z0vkGqaxGig90tdQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="accounts.binance.bh/en/login/stay-signed-in" DesignTimeRectangle="797, 276, 343, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-role='heading' tag='DIV' aaname='Stay Logged In' innertext='Stay Logged In' /&gt;" Guid="af631efa-2382-4629-a05f-6dcc1ad97f37" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log In | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="7109774817d5d27a97fbb8aabbd05854.jpg" xmlns="">0GHPZ4Td8EU-3nSq1g2MS9Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

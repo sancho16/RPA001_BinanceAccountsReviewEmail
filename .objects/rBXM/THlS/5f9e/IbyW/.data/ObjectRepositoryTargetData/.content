@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="Imafw4ZGykOYrNd0ETFleA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="F9qjWPGOgUSrCwHHTVwPhw" Reference="wcxgfMRV1ki7Gva2glI0QQ/IbyWiNWeXka6R23FRY3DNQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="binance.bh/en/markets/overview" DesignTimeRectangle="963, 103, 59, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" Guid="ed8f582d-75a8-4178-9c8d-0dad1b62645a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="479dbbda93a2c440d25e3c5cf0b0c590.jpg" xmlns="">08UDTX_pjXUKGS8cgQYyQhQ</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="binance.bh/en/markets/overview" DesignTimeRectangle="1648, 111, 59, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' innertext='Log In' visibleinnertext='Log In' /&gt;" Guid="ed8f582d-75a8-4178-9c8d-0dad1b62645a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cryptocurrency Market | Coin Prices &amp;amp; Market Cap | Binance' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="480bd8236f7ca9bb5abea2588b98e914.jpg" xmlns="">0hNbvXuCQ_0-DTPCDRdBnjg</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">CheckState</x:String>
   </ObjectRepositoryTargetData.Data>

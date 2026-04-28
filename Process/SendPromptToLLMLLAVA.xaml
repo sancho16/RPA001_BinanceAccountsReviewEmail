@@ -2,7 +2,12 @@
   <x:Members>
     <x:Property Name="in_str_Base64Image" Type="InArgument(x:String)" />
     <x:Property Name="in_strApiUrl" Type="InArgument(x:String)" />
+    <x:Property Name="out_strResponse" Type="OutArgument(x:String)" />
+    <x:Property Name="in_strPrompt" Type="InArgument(x:String)" />
   </x:Members>
+  <this:SendPromptToLLM.in_strPrompt>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SendPromptToLLM.in_strPrompt>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -125,7 +130,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendPromptToLLM" sap:VirtualizedContainerService.HintSize="1109,466" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendPromptToLLM" sap:VirtualizedContainerService.HintSize="1109,991" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="statusCode" />
       <Variable x:TypeArguments="x:String" Name="jsinresponseJson" />
@@ -136,7 +141,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[&quot;{&quot;&quot;model&quot;&quot;: &quot;&quot;llava&quot;&quot;, &quot;&quot;prompt&quot;&quot;: &quot;&quot;Analyze this screenshot&quot;&quot;, &quot;&quot;images&quot;&quot;: [&quot;&quot;&quot; + in_str_Base64Image + &quot;&quot;&quot;], &quot;&quot;stream&quot;&quot;: false}&quot;]" BodyFormat="application/xml" DisplayName="HTTP Request (legacy)" EnableSSLVerification="True" EndPoint="[in_strApiUrl]" sap:VirtualizedContainerService.HintSize="450,103" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[jsinresponseJson]" StatusCode="[statusCode]" TimeoutMS="300000">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Started image IA expert analysis...&quot;]" />
+    <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[&quot;{&quot;&quot;model&quot;&quot;: &quot;&quot;llava&quot;&quot;, &quot;&quot;prompt&quot;&quot;: &quot;&quot;Analyze this screenshot acting as a Criptocurrency expert determining in a scale from 1-100% if shoudl invest on it. Provide information and analysis, teaching me all the technical spacs of trading for this currency and the current status based on that &quot; + in_strPrompt + &quot;&quot;&quot;, &quot;&quot;images&quot;&quot;: [&quot;&quot;&quot; + in_str_Base64Image + &quot;&quot;&quot;], &quot;&quot;stream&quot;&quot;: false}&quot;]" BodyFormat="application/xml" DisplayName="HTTP Request (legacy)" EnableSSLVerification="True" EndPoint="[in_strApiUrl]" sap:VirtualizedContainerService.HintSize="450,103" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[jsinresponseJson]" StatusCode="[statusCode]" TimeoutMS="300000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -153,7 +159,16 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;FINISHED image IA expert analysis. Status code &quot;+statusCode.ToString]" />
     <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jsonObj]" JsonString="[jsinresponseJson]" />
+    <Assign sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_strResponse]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[jsonObj("response").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;The Response is &quot;+jsonObj(&quot;response&quot;).ToString]" />
   </Sequence>
 </Activity>

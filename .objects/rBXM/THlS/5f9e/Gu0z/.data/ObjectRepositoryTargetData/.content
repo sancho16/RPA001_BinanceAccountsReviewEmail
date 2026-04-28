@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="alqPr8qQo0mbo1Lw-anSpA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="1A6syBg_T0irasSwFniKZQ" Reference="wcxgfMRV1ki7Gva2glI0QQ/Gu0zuIy1g0W5Hc6S7qtxRw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="accounts.binance.bh/en/login" DesignTimeRectangle="72, 369, 502, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='julidb710@gmail.com' tag='DIV' /&gt;" Guid="52ebc768-217e-470e-8f01-278f97e6467f" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='g_credential_picker_25b390053989d9e7' title='Sign in - Google Accounts' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="f27b21f3152a58a329b765d8c5629a3d.jpg" xmlns="">0NTVNE7I6XEK26-LhsHrDDQ</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="accounts.binance.bh/en/login" DesignTimeRectangle="16, 333, 574, 68" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-role='link' tag='DIV' innertext='*julidb710@gmail.com*' /&gt;" Guid="2c8a44ab-f07a-43b5-8cea-61490f8c1bb7" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='g_credential_picker_4349cd05ae679e2d' title='Sign in - Google Accounts' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="80f66946f7e592c83698ced5b5476b19.jpg" xmlns="">0tYywAGb6MUGGQFzvBY1Bow</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>

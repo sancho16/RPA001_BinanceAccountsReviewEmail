@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="Y4WoQ8t84E-J5qVvCCpM3A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="UJLQXm9YLUGj_Esf_7hr7g" Reference="wcxgfMRV1ki7Gva2glI0QQ/jSROr7Z0nkqB_ri28Hy8kQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="web.whatsapp.com" DesignTimeRectangle="160, 333, 159, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='pane-side' tag='SPAN' isleaf='0' title='WhatsApp' /&gt;" Guid="6084de93-afb3-45da-a6ae-a7c0c42f898b" ScopeSelectorArgument="&lt;html app='chrome.exe' title='WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
-      <imageRef attrName="InformativeScreenshot" originalValue="32e6b2bda5ee86d995f33b410bafc6f4.png" xmlns="">0osuAa0oN00yh2OVMQ1dN9w</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="web.whatsapp.com" DesignTimeRectangle="160, 328, 458, 72" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid='pane-side' tag='DIV' isleaf='0' parentclass='_ak72 false false false _ak73 _asiw _ap1- _ap1_' /&gt;" Guid="034cf71f-563e-46c6-88db-b6829bad1ccc" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="feb4aeedd8fac4e18e1d5bdde7515e7b.jpg" xmlns="">0GTatt6FKYkm9zK08OFDbOg</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>

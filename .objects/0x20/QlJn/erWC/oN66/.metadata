@@ -1,0 +1,13 @@
+﻿{
+  "Name": "plus-rounded",
+  "Type": "Element",
+  "Id": "oN66xxDKGECr_WQF7ECNfQ",
+  "Reference": "wcxgfMRV1ki7Gva2glI0QQ/oN66xxDKGECr_WQF7ECNfQ",
+  "ParentRef": "wcxgfMRV1ki7Gva2glI0QQ/erWCrZ__oECyX4yw4K5X1g",
+  "Created": "2026-04-27T04:58:47.3725712Z",
+  "Updated": "2026-04-27T04:58:47.3725712Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.30.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
