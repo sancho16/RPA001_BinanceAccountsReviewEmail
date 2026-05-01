@@ -95,7 +95,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="2125.333333333333,1530" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1748,1530" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strTodaySummary" />
       <Variable x:TypeArguments="x:String" Name="strImage" />
@@ -152,7 +152,7 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CraftMessage - Invoke Workflow File (Process\CraftMessage.xaml)" sap:VirtualizedContainerService.HintSize="450,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\CraftMessage.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strMessage">[" Overall result&gt;&gt;&gt;&gt; "+strResponseSTATUS+"&gt;&gt;&gt;&gt;&gt; REGARDING THE CHART: "+strResponsetoIMAGE]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strMessage">["&gt;&gt;RESULT: "+strResponseSTATUS+"&gt;&gt;REGARDING THE CHART: "+strResponsetoIMAGE]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_strCurrency">[in_TransactionItem.SpecificContent("Full Name").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>

@@ -113,19 +113,19 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ShowCurrencyDetail" sap:VirtualizedContainerService.HintSize="1107.3333333333333,2737.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ShowCurrencyDetail" sap:VirtualizedContainerService.HintSize="1748,2741.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName="Chrome inance" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2714.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="092cae67-3a6c-4f3b-9327-4d031a4a627b" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName="Chrome inance" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2718" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="092cae67-3a6c-4f3b-9327-4d031a4a627b" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2520" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2523.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="image_Screenshot" />
               <Variable x:TypeArguments="upr:ILocalResource" Name="str_ScreenshotPath" />
@@ -135,7 +135,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'CANVAS'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,525" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="092cae67-3a6c-4f3b-9327-4d031a4a627b" Version="V5">
+            <uix:NCheckState DisplayName="Check App State 'CANVAS'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,528.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="092cae67-3a6c-4f3b-9327-4d031a4a627b" Version="V5">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>

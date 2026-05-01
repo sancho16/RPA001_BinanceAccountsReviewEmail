@@ -109,9 +109,10 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CraftMessage" sap:VirtualizedContainerService.HintSize="2125.333333333333,2624" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CraftMessage" sap:VirtualizedContainerService.HintSize="1748,2624" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -142,7 +143,7 @@
                 <uix:TargetAnchorable BrowserURL="web.whatsapp.com" ContentHash="BQYVTg4_f0yZJCrzv1t1Vg" DesignTimeRectangle="1203, 1646, 154, 30" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Photos &amp;amp; videos' parentid='app' tag='SPAN' innertext='Photos &amp;amp; videos' /&gt;" Guid="3be76368-12fd-465d-bdb3-19b574eb5a01" Reference="wcxgfMRV1ki7Gva2glI0QQ/nFVJ9UDT9EenQ5DmIP0vqQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
               </uix:NClick.Target>
             </uix:NClick>
-            <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Assign - Get full path image from relative" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strImagePath]</OutArgument>
               </Assign.To>
@@ -176,7 +177,7 @@
                 <uix:TargetAnchorable BrowserURL="web.whatsapp.com" CVScreenId="b22b1e01-ca2a-428e-a0c7-c6c07a9a88d0" ContentHash="BSmg1FkSjESi6Fw6wdR-Pw" CvElementArea="1119, 740, 135, 40" CvTextArea="1162, 751, 46, 22" CvTextArgument="Open" CvType="Button" DesignTimeRectangle="1121, 742, 132, 39" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' cls='Button' /&gt;" Guid="65f0620f-cb2b-4f6e-b6fb-a59587b20bf3" Reference="wcxgfMRV1ki7Gva2glI0QQ/SXUcPuqI-0aoTpBWEnIgcQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'P'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,248" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="WindowMessages" ScopeIdentifier="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Text="[&quot;IA RESPONSE for &quot;+in_strCurrency.ToUpper+ &quot; = &quot;+in_strMessage]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'P'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,248" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="WindowMessages" ScopeIdentifier="5f88a153-6870-4fd7-b4c5-c55b19fdd61d" Text="[&quot;CURRENCY &gt;&gt; &quot;+in_strCurrency.ToUpper+ &quot;       &quot;+in_strMessage]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="web.whatsapp.com" ContentHash="_PvOL28C1Ey3rRxv5-BwGA" DesignTimeRectangle="975, 901, 538, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='P' isleaf='0' parentid='app' /&gt;" Guid="8336e1f7-c46f-4f1c-a9c0-b4b5e7355851" InformativeScreenshot="8ab3a5413bf533a9d0ae5d741f682e24.jpg" Reference="wcxgfMRV1ki7Gva2glI0QQ/aPWNvnHodk2Gy5W9P3aeRA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(1) WhatsApp' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
               </uix:NTypeInto.Target>
