@@ -1,8 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="This variable can be used in case transactions are stored in a DataTable (for example, after being retrieved from a spreadsheet)." Name="io_dt_TransactionData" Type="InOutArgument(sd:DataTable)" />
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_strPromptPrefix" Type="InArgument(x:String)" />
   </x:Members>
+  <this:Process.in_strPromptPrefix>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Process.in_strPromptPrefix>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -39,6 +44,9 @@
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -93,9 +101,14 @@
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1748,1530" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1109,2881" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strTodaySummary" />
       <Variable x:TypeArguments="x:String" Name="strImage" />
@@ -108,7 +121,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kills all Windows processes representing applications used in this business process to assure that the execution starts in a clean state.&#xA;Since the applications are assumed to be already closed, CloseAllApplications is skipped and just KillAllProcess is invoked." DisplayName="Invoke KillAllProcesses workflow (first run)" sap:VirtualizedContainerService.HintSize="450,287.3333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kills all Windows processes representing applications used in this business process to assure that the execution starts in a clean state.&#xA;Since the applications are assumed to be already closed, CloseAllApplications is skipped and just KillAllProcess is invoked." DisplayName="Invoke KillAllProcesses workflow (first run)" sap:VirtualizedContainerService.HintSize="584,287" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="s:String[]" x:Key="in_arrAppsToKill" />
       </ui:InvokeWorkflowFile.Arguments>
@@ -120,8 +133,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ShowCurrencyDetail - Invoke Workflow File (Process\ShowCurrencyDetail.xaml)" sap:VirtualizedContainerService.HintSize="450,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\ShowCurrencyDetail.xaml">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="584,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ShowCurrencyDetail - Invoke Workflow File (Process\ShowCurrencyDetail.xaml)" sap:VirtualizedContainerService.HintSize="584,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\ShowCurrencyDetail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_FullName">[in_TransactionItem.SpecificContent("Full Name").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_URL">[in_TransactionItem.SpecificContent("Url").ToString]</InArgument>
@@ -129,33 +142,226 @@
         <OutArgument x:TypeArguments="x:String" x:Key="out_Image">[strImage]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendPromptToLLM - Invoke Workflow File (Process\SendPromptToLLM.xaml)" sap:VirtualizedContainerService.HintSize="450,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process\SendPromptToLLM.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendPromptToLLM - Invoke Workflow File (Process\SendPromptToLLM.xaml)" sap:VirtualizedContainerService.HintSize="584,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process\SendPromptToLLM.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_strResponse">[strResponseSTATUS]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_strApiUrl" />
         <InArgument x:TypeArguments="x:String" x:Key="in_strPrompt">[in_TransactionItem.SpecificContent("Name").ToString+" has current status: "+strTodaySummary+". Note that current price is "+in_TransactionItem.SpecificContent("Price").ToString+" and 24h Volume as "+in_TransactionItem.SpecificContent("24Volume").ToString+" Current market cap is "+in_TransactionItem.SpecificContent("Market Cap").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendPromptToLLMLLAVA - Invoke Workflow File (Process\SendPromptToLLMLLAVA.xaml)" sap:VirtualizedContainerService.HintSize="450,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\SendPromptToLLMLLAVA.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendPromptToLLMLLAVA - Invoke Workflow File (Process\SendPromptToLLMLLAVA.xaml)" sap:VirtualizedContainerService.HintSize="584,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\SendPromptToLLMLLAVA.xaml">
       <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_TransactionData">[io_dt_TransactionData]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strPromptPrefix">[in_strPromptPrefix]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_str_Base64Image">[strImage]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_strApiUrl" />
         <OutArgument x:TypeArguments="x:String" x:Key="out_strResponse">[strResponsetoIMAGE]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_strPrompt">[in_TransactionItem.SpecificContent("Name").ToString+" has current status: "+strTodaySummary+". Note that current price is "+in_TransactionItem.SpecificContent("Price").ToString+" and 24h Volume as "+in_TransactionItem.SpecificContent("24Volume").ToString+" Current market cap is "+in_TransactionItem.SpecificContent("Market Cap").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NavMessageRecip - Invoke Workflow File (Process\NavMessageRecip.xaml)" sap:VirtualizedContainerService.HintSize="450,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\NavMessageRecip.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendRequestBidAskPrice - Invoke Workflow File (Process\SendRequestBidAskPrice.xaml)" sap:VirtualizedContainerService.HintSize="584,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Process\SendRequestBidAskPrice.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strCrr2" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_strCrr1" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_strApiUrl1" />
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strResponseAskBid" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendRequestBidAskFEE - Invoke Workflow File (Process\SendRequestBidAskFEE.xaml)" sap:VirtualizedContainerService.HintSize="584,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Process\SendRequestBidAskFEE.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Double" x:Key="out_askPrice" />
+        <InArgument x:TypeArguments="x:Double" x:Key="out_bidPrice" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAPISctKey" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAPIKey" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_strApiUrl2" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_strCrr2" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_strCrr1" />
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_TransactionData" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_strPromptPrefix" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_Base64Image" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_strApiUrl1" />
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strResponseAskBid" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_strPrompt" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="584,1000" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="548,889" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dt_TransactionData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="514,829" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,656" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="FullName" />
+                    <Variable x:TypeArguments="x:String" Name="Price" />
+                    <Variable x:TypeArguments="x:String" Name="PriceSmall" />
+                    <Variable x:TypeArguments="x:String" Name="Change" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,428" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[FullName]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Full Name").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[Price]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Price").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[PriceSmall]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Price Small").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[Change]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String" xml:space="preserve">[in_TransactionItem.SpecificContent("Name").ToString
+"Full Name"
+"Price"
+"Price Small"
+"Change"
+"24Volume"
+"Market Cap"
+"Url"]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation To="{x:Null}" sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object" xml:space="preserve">[in_TransactionItem.SpecificContent("Name").ToString
+"Full Name"
+"Price"
+"Price Small"
+"Change"
+"24Volume"
+"Market Cap"
+"Url"]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation To="{x:Null}" sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object" xml:space="preserve">[in_TransactionItem.SpecificContent("Name").ToString
+"Full Name"
+"Price"
+"Price Small"
+"Change"
+"24Volume"
+"Market Cap"
+"Url"]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation To="{x:Null}" sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object" xml:space="preserve">[in_TransactionItem.SpecificContent("Name").ToString
+"Full Name"
+"Price"
+"Price Small"
+"Change"
+"24Volume"
+"Market Cap"
+"Url"]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation To="{x:Null}" sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object" xml:space="preserve">[in_TransactionItem.SpecificContent("Name").ToString
+"Full Name"
+"Price"
+"Price Small"
+"Change"
+"24Volume"
+"Market Cap"
+"Url"]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation To="{x:Null}" sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object" xml:space="preserve">[in_TransactionItem.SpecificContent("Name").ToString
+"Full Name"
+"Price"
+"Price Small"
+"Change"
+"24Volume"
+"Market Cap"
+"Url"]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation To="{x:Null}" sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object" xml:space="preserve">[in_TransactionItem.SpecificContent("Name").ToString
+"Full Name"
+"Price"
+"Price Small"
+"Change"
+"24Volume"
+"Market Cap"
+"Url"]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendPromptToLLMLLAVA - Invoke Workflow File (Process\SendPromptToLLMLLAVA.xaml)" sap:VirtualizedContainerService.HintSize="478,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Process\SendPromptToLLMLLAVA.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_TransactionData" />
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strPromptPrefix" />
+                      <InArgument x:TypeArguments="x:String" x:Key="in_str_Base64Image">[strImage]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strApiUrl" />
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strResponse">[strResponsetoIMAGE]</OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strPrompt">[in_TransactionItem.SpecificContent("Name").ToString+" has current status: "+strTodaySummary+". Note that current price is "+in_TransactionItem.SpecificContent("Price").ToString+" and 24h Volume as "+in_TransactionItem.SpecificContent("24Volume").ToString+" Current market cap is "+in_TransactionItem.SpecificContent("Market Cap").ToString]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+          </ui:ForEachRow>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NavMessageRecip - Invoke Workflow File (Process\NavMessageRecip.xaml)" sap:VirtualizedContainerService.HintSize="584,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\NavMessageRecip.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_strPassword" />
         <InArgument x:TypeArguments="x:String" x:Key="in_strUser" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CraftMessage - Invoke Workflow File (Process\CraftMessage.xaml)" sap:VirtualizedContainerService.HintSize="450,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\CraftMessage.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CraftMessage - Invoke Workflow File (Process\CraftMessage.xaml)" sap:VirtualizedContainerService.HintSize="584,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\CraftMessage.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_strMessage">["&gt;&gt;RESULT: "+strResponseSTATUS+"&gt;&gt;REGARDING THE CHART: "+strResponsetoIMAGE]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_strCurrency">[in_TransactionItem.SpecificContent("Full Name").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="450,79.33333333333333" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="584,80" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
   </Sequence>
 </Activity>
