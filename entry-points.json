@@ -16,6 +16,9 @@
           },
           "in_boolLoadData": {
             "type": "boolean"
+          },
+          "in_WorkingCurrencyName": {
+            "type": "string"
           }
         },
         "required": []

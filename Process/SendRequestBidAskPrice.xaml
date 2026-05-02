@@ -1,5 +1,7 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SendPromptToLLM" this:SendPromptToLLM.in_strCrr2="USDT" this:SendPromptToLLM.in_strCrr1="BTC" this:SendPromptToLLM.in_strApiUrl1="https://api.binance.com/api/v3/ticker/bookTicker" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SendPromptToLLM" this:SendPromptToLLM.in_strApiUrl1="https://api.binance.com/api/v3/ticker/bookTicker" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="out_dblBAsk" Type="OutArgument(x:Double)" />
+    <x:Property Name="out_dblBid" Type="OutArgument(x:Double)" />
     <x:Property Name="in_strCrr2" Type="InArgument(x:String)" />
     <x:Property Name="in_strCrr1" Type="InArgument(x:String)" />
     <x:Property Name="in_strApiUrl1" Type="InArgument(x:String)" />
@@ -134,9 +136,10 @@
       <AssemblyReference>System.Security.Cryptography.Pkcs</AssemblyReference>
       <AssemblyReference>System.Security.Cryptography</AssemblyReference>
       <AssemblyReference>System.Security.Cryptography.ProtectedData</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendPromptToLLM" sap:VirtualizedContainerService.HintSize="1109,1873" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendPromptToLLM" sap:VirtualizedContainerService.HintSize="1748,2057.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="statusCode" />
       <Variable x:TypeArguments="x:String" Name="jsinresponseJson" />
@@ -148,8 +151,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Started image IA expert analysis...&quot;]" />
-    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strSymbolComp]</OutArgument>
       </Assign.To>
@@ -157,7 +159,8 @@
         <InArgument x:TypeArguments="x:String">[in_strCrr1+in_strCrr2]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request (legacy) BINANCE BIDASK" EnableSSLVerification="True" EndPoint="[in_strApiUrl1]" sap:VirtualizedContainerService.HintSize="452,103" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="GET" Result="[jsinresponseJson]" StatusCode="[statusCode]" TimeoutMS="300000">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Started ASK BID... &quot;+strSymbolComp]" />
+    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request (legacy) BINANCE BIDASK" EnableSSLVerification="True" EndPoint="[in_strApiUrl1]" sap:VirtualizedContainerService.HintSize="452,104" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="GET" Result="[jsinresponseJson]" StatusCode="[statusCode]" TimeoutMS="300000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -174,15 +177,25 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;FINISHED image AI expert analysis. Status code &quot;+statusCode.ToString]" />
-    <ui:DeserializeJson x:TypeArguments="njl:JArray" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="452,174" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jsonObj]" JsonString="[jsinresponseJson]" />
-    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each currentJToken" sap:VirtualizedContainerService.HintSize="452,707" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[jsonObj]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;FINISHED image AI expert analysis. Status code &quot;+statusCode.ToString]" />
+    <ui:DeserializeJson x:TypeArguments="njl:JArray" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="452,176" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jsonObj]" JsonString="[jsinresponseJson]" />
+    <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JArray">[jsonObj]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JArray" xml:space="preserve">[New Newtonsoft.Json.Linq.JArray(
+    jsonObj.Where(Function(x) x("symbol").ToString.Contains(strSymbolComp))
+)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each currentJToken" sap:VirtualizedContainerService.HintSize="452,1048" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[jsonObj]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="njl:JToken">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="njl:JToken" Name="currentJToken" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,576" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,926" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -190,6 +203,22 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[currentJToken(&quot;symbol&quot;).ToString]" />
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn" Message="[&quot;BID: &quot;+CDbl(currentJToken(&quot;bidPrice&quot;).ToString).ToString]" />
+            <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_11">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Double">[out_dblBAsk]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Double">[CDbl(currentJToken("bidPrice"))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Double">[out_dblBid]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Double">[CDbl(currentJToken("askPrice"))]</InArgument>
+              </Assign.Value>
+            </Assign>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;ASK: &quot;+CDbl(currentJToken(&quot;askPrice&quot;).ToString).ToString]" />
           </Sequence>
         </ActivityAction>
@@ -201,14 +230,5 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[out_strResponseAskBid]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[jsonObj("response").ToString]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;The Response is &quot;+jsonObj(&quot;response&quot;).ToString]" />
   </Sequence>
 </Activity>

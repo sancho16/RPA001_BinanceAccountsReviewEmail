@@ -40,6 +40,18 @@
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": null
+    },
+    {
+      "Name": "in_WorkingCurrencyName",
+      "DisplayName": "in_WorkingCurrencyName",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "BTC",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
     }
   ]
 }
